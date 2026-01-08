@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./backend
+    container_name: ml-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/models:/app/models
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: ml-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
