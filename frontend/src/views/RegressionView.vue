@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>Regresión Lineal – Ventas por Hora</h2>
+    <h2>Regresión Lineal Simple</h2>
 
     <TrainModel @trained="modelReady = true" />
 
